@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/static/css/main.css" />
+
+		<style>
+			body {
+				background: black;
+			}
+			.container2 {
+				margin-left: 5%;
+				margin-right: 5%;
+			}
+
+			/* Navbar section */
+
+			.nav {
+				width: 100%;
+				height: 65px;
+				position: fixed;
+				line-height: 65px;
+				text-align: center;
+				background-color: black;
+			}
+
+			.nav div.logo {
+				width: auto;
+				position: absolute;
+				height: 10px;
+			}
+
+			.nav div.logo a {
+				text-decoration: none;
+				color: #fff;
+				font-weight: bold;
+				font-size: 1.8em;
+				text-transform: uppercase;
+			}
+
+			.nav div.logo a:hover {
+				color: #c0c0c0;
+			}
+
+			.nav div.main_list {
+				width: 450px;
+				height: 65px;
+				float: right;
+			}
+
+			.nav div.main_list ul {
+				width: 100%;
+				height: 65px;
+				display: flex;
+				list-style: none;
+			}
+
+			.nav div.main_list ul li {
+				width: 120px;
+				height: 65px;
+			}
+
+			.nav div.main_list ul li a {
+				text-decoration: none;
+				color: #fff;
+				line-height: 65px;
+				text-transform: uppercase;
+			}
+
+			.nav div.main_list ul li a:hover {
+				color: #c0c0c0;
+			}
+
+			.nav div.media_button {
+				width: 40px;
+				height: 40px;
+				background-color: transparent;
+				position: absolute;
+				right: 15px;
+				top: 12px;
+				display: none;
+			}
+
+			.nav div.media_button button.main_media_button {
+				width: 100%;
+				height: 100%;
+				background-color: transparent;
+				outline: 0;
+				border: none;
+				cursor: pointer;
+			}
+
+			.nav div.media_button button.main_media_button span {
+				width: 98%;
+				height: 1px;
+				display: block;
+				background-color: #fff;
+				margin-top: 9px;
+				margin-bottom: 10px;
+			}
+
+			.nav div.media_button button.main_media_button:hover span:nth-of-type(1) {
+				transform: rotateY(180deg);
+				transition: all 0.5s;
+				background-color: #c0c0c0;
+			}
+
+			.nav div.media_button button.main_media_button:hover span:nth-of-type(2) {
+				transform: rotateY(180deg);
+				transition: all 0.4s;
+				background-color: #c0c0c0;
+			}
+
+			.nav div.media_button button.main_media_button:hover span:nth-of-type(3) {
+				transform: rotateY(180deg);
+				transition: all 0.3s;
+				background-color: #c0c0c0;
+			}
+
+			.nav div.media_button button.active span:nth-of-type(1) {
+				transform: rotate3d(0, 0, 1, 45deg);
+				position: absolute;
+				margin: 0;
+			}
+
+			.nav div.media_button button.active span:nth-of-type(2) {
+				display: none;
+			}
+
+			.nav div.media_button button.active span:nth-of-type(3) {
+				transform: rotate3d(0, 0, 1, -45deg);
+				position: absolute;
+				margin: 0;
+			}
+
+			.nav div.media_button button.active:hover span:nth-of-type(1) {
+				transform: rotate3d(0, 0, 1, 20deg);
+			}
+
+			.nav div.media_button button.active:hover span:nth-of-type(3) {
+				transform: rotate3d(0, 0, 1, -20deg);
+			}
+
+			/* Home section */
+
+			/* Medai qurey section */
+
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				.container2 {
+					margin: 0;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				.container2 {
+					margin: 0;
+				}
+
+				.nav div.logo {
+					margin-left: 15px;
+				}
+
+				.nav div.main_list {
+					width: 100%;
+					margin-top: 65px;
+					height: 0px;
+					overflow: hidden;
+				}
+
+				.nav div.show_list {
+					height: 200px;
+				}
+
+				.nav div.main_list ul {
+					flex-direction: column;
+					width: 100%;
+					height: 200px;
+					top: 80px;
+					right: 0;
+					left: 0;
+				}
+
+				.nav div.main_list ul li {
+					width: 100%;
+					height: 40px;
+					background-color: black;
+				}
+
+				.nav div.main_list ul li a {
+					text-align: center;
+					line-height: 40px;
+					width: 100%;
+					height: 40px;
+					display: table;
+				}
+
+				.nav div.media_button {
+					display: block;
+				}
+			}
+			/*nav end*/
+			.right2 {
+				display: none;
+				overflow: hidden;
+				background: black;
+				color: #fff;
+			}
+			.box2 {
+				color: #fff;
+				background: black;
+			}
+			#left1 {
+				width: 75rem;
+				overflow: hidden;
+				padding: 4rem 0rem 0rem 0rem;
+			}
+			.right1 {
+				background: black;
+
+				overflow: hidden;
+				margin-left: 12rem;
+			}
+			.left {
+				overflow: hidden;
+			}
+			::-webkit-scrollbar {
+				width: 3px;
+			}
+			h1 {
+				color: rgb(255, 255, 255);
+				font-weight: bolder;
+			}
+			#question1 {
+				color: rgb(255, 255, 255);
+			}
+			#question2 {
+				color: rgb(255, 255, 255);
+			}
+			#solution {
+				height: 60vh;
+
+				overflow-y: scroll;
+				color: rgb(255, 255, 255);
+			}
+			.small {
+				color: rgb(255, 255, 255);
+				text-align: center;
+				font-weight: 600;
+			}
+		</style>
+		<title>LetChat</title>
+	</head>
+
+	<body class="bg-black">
+		<nav class="nav">
+			<div class="container2">
+				<div class="logo">
+					<a href="#">LetChat</a>
+				</div>
+				<div class="main_list" id="mainListDiv">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="http://127.0.0.1:5006/">Project</a></li>
+						<li><a href="#">COntact</a></li>
+						<li><a href="/about">About</a></li>
+					</ul>
+				</div>
+				<div class="media_button">
+					<button class="main_media_button" id="mediaButton">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+
+		<div id="left1" class="flex h-[100vh] mt-12 text-white">
+			<div class="left bg-[#202123] w-24">
+				<button
+					class="py-2 w m-2 px-10 space-x-2 border-white border rounded-md flex mx-4 justify-start items-center hover:opacity-70"
+				>
+					<svg
+						stroke="currentColor"
+						fill="none"
+						stroke-width="2"
+						viewBox="0 0 24 24"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="h-4 w-4"
+						height="1em"
+						width="1em"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<line x1="12" y1="5" x2="12" y2="19"></line>
+						<line x1="5" y1="12" x2="19" y2="12"></line>
+					</svg>
+					<span> <a href="/">New Chat</a> </span>
+				</button>
+				<div class="text-xs m-4 mx-8 text-gray-400">Today</div>
+				<div class="chats flex flex-col justify-center items-center space-y-2">
+					{% for chat in myChats %}
+					<div
+						class="chat space-x-2 opacity-80 w-[90%] px-5 py-2 rounded-md bg-gray-600 cursor-pointer flex justify-start items-center"
+					>
+						<svg
+							stroke="currentColor"
+							fill="none"
+							stroke-width="2"
+							viewBox="0 0 24 24"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="h-4 w-4"
+							height="1em"
+							width="1em"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+							></path>
+						</svg>
+						<span>{{chat.question}}</span>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div class="right1 bg-black flex justify-center items-center flex-col">
+				<div><h1 class="text-5xl py-3">Ask any Question.</h1></div>
+				<div><h1 class="pb-10">We will try to Answer.</h1></div>
+				<div
+					class="input w-full text-center my-8 flex items-center justify-center flex-col"
+				>
+					<div class="buttonsvg pl-16 w-[50vw] flex">
+						<input
+							class="w-full p-4 bg-gray-600 rounded-md"
+							placeholder="Send a Message"
+							type="text"
+							name="text"
+							id="questionInput"
+						/>
+
+						<button id="sendButton" class="relative -left-20 pl-10">
+							<svg
+								stroke="currentColor"
+								fill="none"
+								stroke-width="2"
+								viewBox="0 0 24 24"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="h-4 w-4 mr-1"
+								height="1em"
+								width="1em"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<line x1="22" y1="2" x2="11" y2="13"></line>
+								<polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+							</svg>
+						</button>
+					</div>
+					<div class="small text-xs py-2 pr-10 opacity-70">
+						Free Research Preview.<a class="small underline" href="/">
+							LetChat Mar 23 Version</a
+						>
+					</div>
+				</div>
+			</div>
+
+			<div class="right2 bg-black w-full flex flex-col items-center h-fit">
+				<div
+					class="box1 m-auto py-7 flex justify-start w-[40vw] items-center space-x-6"
+				>
+					<img class="w-9" src="" alt="" />
+					<div id="question2">Loading...</div>
+				</div>
+				<div
+					class="box2 bg-gray-600 py-7 flex justify-center w-full items-center"
+				>
+					<div class="box w-[40vw] flex justify-start space-x-6">
+						<div class="flex space-y-4 flex-col">
+							<div id="question1">Loading...</div>
+							<div id="solution">Loading...</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="small text-xs py-2 pr-10 opacity-70">
+					Free Research Preview. LetChat may produce inaccurate information
+					about people, places, or facts.<a class="small underline" href="/">
+						LetGPT Mar 23 Version</a
+					>
+				</div>
+			</div>
+		</div>
+		<script src="/static/js/script.js"></script>
+	</body>
+</html>

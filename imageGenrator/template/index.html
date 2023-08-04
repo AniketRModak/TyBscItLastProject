@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>AI Image Generator</title>
+		<link rel="stylesheet" href="/static/style.css" />
+		<link href="dist/hamburgers.css" rel="stylesheet" />
+	</head>
+	<body>
+		<nav class="nav">
+			<div class="container">
+				<div class="logo">
+					<a href="#">AI Image Generator</a>
+				</div>
+				<div class="main_list" id="mainListDiv">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="http://127.0.0.1:5006/">Project</a></li>
+						<li><a href="#">COntact</a></li>
+						<li><a href="/about">About</a></li>
+					</ul>
+				</div>
+				<div class="media_button">
+					<button class="main_media_button" id="mediaButton">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+		<div class="main">
+			<div class="cont1">
+				<div class="mainProm">
+					<h1>The world’s most powerful AI photo art generation engine.</h1>
+					<h1>What will you create?</h1>
+				</div>
+			</div>
+			<div class="input-group">
+				<input id="imgprompt" placeholder="Enter Prompt here" type="text" />
+				<button id="submitbtn" class="submit-button">
+					<span>SUBMIT</span>
+				</button>
+			</div>
+			<div id="tempbg"><img src="/static/img/bg.jpg" alt="" /></div>
+			<div id="loadingGif">
+				<div class="wrapper">
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="shadow"></div>
+					<div class="shadow"></div>
+					<div class="shadow"></div>
+				</div>
+			</div>
+		</div>
+		<div class="imageCont"></div>
+
+		<script src="/static/js/main.js"></script>
+	</body>
+</html>

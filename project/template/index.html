@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Project</title>
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Assistant&family=Roboto+Condensed:wght@300;400;700&display=swap");
+		</style>
+	</head>
+	<body>
+		<nav class="nav">
+			<div class="container">
+				<div class="logo">
+					<a href="#">Combine AI</a>
+				</div>
+				<div class="main_list" id="mainListDiv">
+					<ul>
+						<li><a href="#page0">Home</a></li>
+						<li><a href="#page1">Veer</a></li>
+						<li><a href="#page2">LetChat</a></li>
+						<li><a href="#page3">imageG</a></li>
+						<li><a href="#page4" class="tr">Translator</a></li>
+					</ul>
+				</div>
+				<div class="media_button">
+					<button class="main_media_button" id="mediaButton">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+		<div id="page0" class="hidden">
+			<div class="maintext">
+				<h1>I am <span>Artificial</span> Intelligence</h1>
+			</div>
+			<div class="mainimg"><img src="/static/img/veer.png" alt="" /></div>
+			<div class="scroll-downs">
+				<div class="mousey">
+					<div class="scroller"></div>
+				</div>
+				<h4>scroll</h4>
+			</div>
+		</div>
+		<div id="page1" class="hidden">
+			<div class="veertxt">
+				<h1>I am virtual Assistant<span> VEER</span></h1>
+				<h3>Ask me <span>Anything !</span></h3>
+			</div>
+
+			<div class="veerimg">
+				<img src="/static/img/voice.gif" alt="" />
+				<button class="shadow__btn">
+					<a href="http://127.0.0.1:5003/">open</a>
+				</button>
+			</div>
+		</div>
+		<div id="page2" class="hidden">
+			<div class="chatimg">
+				<img src="/static/img/robort.gif" alt="" /><button class="shadow__btn">
+					<a href="http://127.0.0.1:5002/">open</a>
+				</button>
+			</div>
+			<div class="chattxt">
+				<h1>Future of <span>AI</span></h1>
+				<h2>Let <span>chat</span> with me</h2>
+			</div>
+		</div>
+		<div id="page3" class="hidden">
+			<div class="imgtxt">
+				<h1>I can <span> Image </span> Generator</h1>
+				<h3>Enter any <span> Prompt </span> generat image</h3>
+			</div>
+
+			<div class="imggen">
+				<img src="/static/img/imagegen.png" alt="" />
+				<button class="shadow__btn">
+					<a href="http://127.0.0.1:5008/">open</a>
+				</button>
+			</div>
+		</div>
+		<div id="page4" class="hidden">
+			<div class="transimg">
+				<img src="/static/img/trans.gif" alt="" /><button class="shadow__btn">
+					<a href="http://127.0.0.1:5501/index.html">open</a>
+				</button>
+			</div>
+			<div class="transtxt">
+				<h1>With AI <span> Translate </span> Anything</h1>
+				<h2>Any <span> Language </span> can Translate</h2>
+			</div>
+		</div>
+		<script src="/static/js/scrpit.js"></script>
+	</body>
+</html>

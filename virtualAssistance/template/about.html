@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<title>CombineAI About</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			:root {
+				--black-color: black;
+			}
+			* {
+				padding: 0;
+				margin: 0;
+				text-decoration: none;
+				list-style: none;
+				box-sizing: border-box;
+			}
+			/* nav start*/
+			.container2 {
+				margin-left: 5%;
+				margin-right: 5%;
+			}
+
+			.nav {
+				width: 100%;
+				height: 65px;
+				z-index: 1;
+				position: absolute;
+				line-height: 65px;
+				text-align: center;
+				background-color: var(--var(--black-color)-color);
+			}
+
+			.nav div.logo {
+				width: 180px;
+				height: 10px;
+				position: absolute;
+			}
+
+			.nav div.logo a {
+				text-decoration: none;
+				color: #fff;
+				font-weight: bold;
+				font-size: 1.8em;
+				text-transform: uppercase;
+			}
+
+			.nav div.logo a:hover {
+				color: #c0c0c0;
+			}
+
+			.nav div.main_list {
+				width: 600px;
+				height: 65px;
+				float: right;
+			}
+
+			.nav div.main_list ul {
+				width: 100%;
+				height: 65px;
+				display: flex;
+				list-style: none;
+			}
+
+			.nav div.main_list ul li {
+				width: 120px;
+				height: 65px;
+			}
+
+			.nav div.main_list ul li a {
+				text-decoration: none;
+				color: #fff;
+				line-height: 65px;
+				font-size: larger;
+				text-transform: uppercase;
+			}
+
+			.nav div.main_list ul li a:hover {
+				color: #c0c0c0;
+			}
+
+			.nav div.media_button {
+				width: 40px;
+				height: 40px;
+				background-color: transparent;
+				position: absolute;
+				right: 15px;
+				top: 12px;
+				display: none;
+			}
+
+			.nav div.media_button button.main_media_button {
+				width: 100%;
+				height: 100%;
+				background-color: transparent;
+				outline: 0;
+				border: none;
+				cursor: pointer;
+			}
+
+			.nav div.media_button button.main_media_button span {
+				width: 98%;
+				height: 1px;
+				display: block;
+				background-color: #fff;
+				margin-top: 9px;
+				margin-bottom: 10px;
+			}
+
+			.nav div.media_button button.main_media_button:hover span:nth-of-type(1) {
+				transform: rotateY(180deg);
+				transition: all 0.5s;
+				background-color: #c0c0c0;
+			}
+
+			.nav div.media_button button.main_media_button:hover span:nth-of-type(2) {
+				transform: rotateY(180deg);
+				transition: all 0.4s;
+				background-color: #c0c0c0;
+			}
+
+			.nav div.media_button button.main_media_button:hover span:nth-of-type(3) {
+				transform: rotateY(180deg);
+				transition: all 0.3s;
+				background-color: #c0c0c0;
+			}
+
+			.nav div.media_button button.active span:nth-of-type(1) {
+				transform: rotate3d(0, 0, 1, 45deg);
+				position: absolute;
+				margin: 0;
+			}
+
+			.nav div.media_button button.active span:nth-of-type(2) {
+				display: none;
+			}
+
+			.nav div.media_button button.active span:nth-of-type(3) {
+				transform: rotate3d(0, 0, 1, -45deg);
+				position: absolute;
+				margin: 0;
+			}
+
+			.nav div.media_button button.active:hover span:nth-of-type(1) {
+				transform: rotate3d(0, 0, 1, 20deg);
+			}
+
+			.nav div.media_button button.active:hover span:nth-of-type(3) {
+				transform: rotate3d(0, 0, 1, -20deg);
+			}
+
+			/* Home section */
+
+			/* Medai qurey section */
+
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				.container2 {
+					margin: 0;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				.container2 {
+					margin: 0;
+				}
+
+				.nav div.logo {
+					margin-left: 15px;
+				}
+
+				.nav div.main_list {
+					width: 100%;
+					margin-top: 65px;
+					height: 0px;
+					overflow: hidden;
+				}
+
+				.nav div.show_list {
+					height: 200px;
+				}
+
+				.nav div.main_list ul {
+					flex-direction: column;
+					width: 100%;
+					height: 200px;
+					top: 80px;
+					right: 0;
+					left: 0;
+				}
+
+				.nav div.main_list ul li {
+					width: 100%;
+					height: 40px;
+					background-color: var(--black-color);
+				}
+
+				.nav div.main_list ul li a {
+					text-align: center;
+					line-height: 40px;
+					width: 100%;
+					height: 40px;
+					display: table;
+				}
+
+				.nav div.media_button {
+					display: block;
+				}
+			}
+			/* nav end*/
+			.about-section {
+				padding: 50px;
+				text-align: center;
+				background-color: #474e5d;
+				color: white;
+			}
+			/* about start*/
+			/*.background {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100vh;
+				width: 100vw;
+				background: url("https://images.unsplash.com/photo-1447433589675-4aaa569f3e05?ixlib=rb-0.3.5&s=4222852e25e0f57d9485f7889957e99a&auto=format&fit=crop&w=2000&q=80");
+				background-size: cover;
+				background: #ccc;
+				background-position: 0 50%;
+			}*/
+			.background:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background: var(--black-color);
+			}
+
+			.outer-div,
+			.inner-div {
+				height: 450px;
+				max-width: 300px;
+				margin: 0 auto;
+				position: relative;
+			}
+
+			.outer-div {
+				margin-top: 4rem;
+				perspective: 900px;
+				perspective-origin: 50% calc(50% - 18em);
+			}
+
+			.inner-div {
+				margin: 0 auto;
+				border-radius: 5px;
+				font-weight: 400;
+				color: #071011;
+				font-size: 1rem;
+				text-align: center;
+				transition: all 0.6s cubic-bezier(0.8, -0.4, 0.2, 1.7);
+				transform-style: preserve-3d;
+				/*&:hover .front__face-photo,
+				&:hover .front__footer {
+				  opacity: 1;
+				}*/
+			}
+			.inner-div:hover .social-icon {
+				opacity: 1;
+				top: 0;
+			}
+			.social-icon img {
+				width: 3rem;
+			}
+			.outer-div:hover .inner-div {
+				transform: rotateY(180deg);
+			}
+
+			.front,
+			.back {
+				position: relative;
+				top: 0;
+				left: 0;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+
+			.front {
+				cursor: pointer;
+				height: 100%;
+				background: #fff;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				border-radius: 5px;
+				box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5),
+					0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+			}
+
+			.front__bkg-photo {
+				position: relative;
+				height: 150px;
+				width: 300px;
+				background: url("/static/img/bg.jpg") no-repeat;
+				background-size: cover;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				overflow: hidden;
+				border-top-right-radius: 5px;
+				border-top-left-radius: 5px;
+			}
+			.front__bkg-photo:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+			}
+
+			.front__face-photo {
+				position: relative;
+				top: -60px;
+				height: 120px;
+				width: 120px;
+				margin: 0 auto;
+				border-radius: 50%;
+				border: 5px solid #fff;
+				background: url("/static/img/mypic.jpg") no-repeat;
+				background-size: contain;
+				overflow: hidden;
+				/* backface-visibility: hidden;
+				 transition: all 0.6s cubic-bezier(0.8, -0.4, 0.2, 1.7);
+				 z-index: 3;*/
+			}
+
+			.front__text {
+				position: relative;
+				top: -55px;
+				margin: 0 auto;
+				font-family: "Montserrat";
+				font-size: 18px;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+			.front__text .front__text-header {
+				font-weight: 700;
+				font-family: "Oswald";
+				text-transform: uppercase;
+				font-size: 20px;
+				margin: 0.5rem 0rem 4rem 0rem;
+			}
+			.front__text .front__text-para {
+				position: relative;
+				top: -5px;
+				color: #000;
+				font-size: 14px;
+				letter-spacing: 0.4px;
+				font-weight: 400;
+				font-family: "Montserrat", sans-serif;
+			}
+			.front__text .front-icons {
+				position: relative;
+				top: 0;
+				font-size: 14px;
+				margin-right: 6px;
+				color: gray;
+			}
+			.front__text .front__text-hover {
+				position: relative;
+				top: 2.5rem;
+				font-size: 10px;
+				color: tomato;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.4px;
+				border: 2px solid tomato;
+				padding: 8px 15px;
+				border-radius: 30px;
+				background: tomato;
+				color: #fff;
+			}
+
+			.back {
+				transform: rotateY(180deg);
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background: linear-gradient(
+					141deg,
+					rgba(34, 193, 195, 1) 0%,
+					rgba(253, 187, 45, 1) 100%
+				);
+				border-radius: 5px;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.social-media-wrapper {
+				font-size: 36px;
+			}
+			.social-media-wrapper .social-icon {
+				position: relative;
+				top: 20px;
+
+				margin-left: 5px;
+				margin-right: 5px;
+				opacity: 0;
+				color: #fff;
+				transition: all 0.4s cubic-bezier(0.3, 0.7, 0.1, 1.9);
+			}
+
+			.social-media-wrapper .social-icon:nth-child(1) {
+				transition-delay: 0.6s;
+			}
+			.social-media-wrapper .social-icon:nth-child(2) {
+				transition-delay: 0.7s;
+			}
+			.social-media-wrapper .social-icon:nth-child(3) {
+				transition-delay: 0.8s;
+			}
+			.social-media-wrapper .social-icon:nth-child(4) {
+				transition-delay: 0.9s;
+			}
+
+			.fab {
+				position: relative;
+				top: 0;
+				left: 0;
+				transition: all 200ms ease-in-out;
+			}
+
+			.fab:hover {
+				top: -5px;
+			}
+			/* about end*/
+		</style>
+	</head>
+	<body>
+		<nav class="nav">
+			<div class="container2">
+				<div class="logo">
+					<a href="#">Combine AI</a>
+				</div>
+				<div class="main_list" id="mainListDiv">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="http://127.0.0.1:5006/">Project</a></li>
+						<li><a href="#">COntact</a></li>
+						<li><a href="/about">About</a></li>
+					</ul>
+				</div>
+				<div class="media_button">
+					<button class="main_media_button" id="mediaButton">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+
+		<h1 style="text-align: center">Creator</h1>
+		<div class="background"></div>
+
+		<div class="outer-div">
+			<div class="inner-div">
+				<div class="front">
+					<div class="front__bkg-photo"></div>
+					<div class="front__face-photo"></div>
+					<div class="front__text">
+						<h3 class="front__text-header">Aniket Modak</h3>
+						<p>Bsc-It Student</p>
+
+						<span class="front__text-hover">Hover to Find Me</span>
+					</div>
+				</div>
+				<div class="back">
+					<div class="social-media-wrapper">
+						<a
+							href="https://instagram.com/aniket_modak_?igshid=MzNlNGNkZWQ4Mg=="
+							class="social-icon"
+							><img src="/static/img/mail.png" alt=""
+						/></a>
+						<a
+							href="https://www.linkedin.com/in/aniket-modak-4650a024b"
+							class="social-icon"
+							><img src="/static/img/linked.png" alt="linkedIn"
+						/></a>
+						<a href="https://github.com/AniketRModak" class="social-icon"
+							><img src="/static/img/git.png" alt="git"
+						/></a>
+						<a
+							href="https://twitter.com/AniketModak8689?t=TNgYupmEQJKMm-UorhwFpg&s=09"
+							class="social-icon"
+							><img src="/static/img/twitter.png" alt="git"
+						/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="about-section">
+			<h1>About Us Page</h1>
+			<p>
+				I am Bscit Last year student and i am presenting this project for my
+				last year of college .
+			</p>
+			<p>
+				This project is all about AI technoloy i was curious About AI so Try to
+				make this.
+			</p>
+			<p>This project combination of all new opeAI technology .</p>
+		</div>
+		<script>
+			var mainListDiv = document.getElementById("mainListDiv"),
+				mediaButton = document.getElementById("mediaButton");
+
+			mediaButton.onclick = function () {
+				"use strict";
+
+				mainListDiv.classList.toggle("show_list");
+				mediaButton.classList.toggle("active");
+			};
+		</script>
+	</body>
+</html>

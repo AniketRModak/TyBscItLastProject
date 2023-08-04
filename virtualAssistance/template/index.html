@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Virtual Assistant</title>
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<script
+			type="module"
+			src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"
+		></script>
+		<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<nav class="nav">
+			<div class="container2">
+				<div class="logo">
+					<a href="#">Virtual assistant</a>
+				</div>
+				<div class="main_list" id="mainListDiv">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="http://127.0.0.1:5006/">Project</a></li>
+						<li><a href="#command">Commands</a></li>
+						<li><a href="/about">About</a></li>
+					</ul>
+				</div>
+				<div class="media_button">
+					<button class="main_media_button" id="mediaButton">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+		<!-- <div class="bgco"></div>  -->
+		<section class="main">
+			<div class="main2">
+				<h1><span class="auto-type"></span></h1>
+				<h3>ask me Anything?</h3>
+
+				<div id="sendButton" class="input">
+					<button class="talk">
+						<i class="fas fa-microphone-alt"></i>
+					</button>
+
+					<h2 class="content" id="userquestion">Click here to speak</h2>
+				</div>
+			</div>
+			<div class="image-container">
+				<model-viewer
+					class="d"
+					alt="ograms"
+					src="/static/img/robort2.glb"
+					camera-controls
+					shadow-intensity="2"
+					touch-action="pan-y"
+					auto-rotate
+				></model-viewer>
+			</div>
+		</section>
+		<section id="command">
+			<h1>some Command Example</h1>
+			<div class="realin">
+				<main>
+					<ol class="gradient-list">
+						<h2>disclaimer please dont ask innporporate question</h2>
+						<li>
+							you can ask any question.I try my best to reach a appropriate
+							Answer.
+						</li>
+						<li>Hello</li>
+						<li>Who made you? OR Who creates you?</li>
+						<li>What's your name? OR What is your name?</li>
+						<li>Open YouTube.</li>
+						<li>Open Google.</li>
+						<li>Play song.</li>
+						<li>
+							Google + "any Photo,Video and text information you want see on
+							google"
+						</li>
+					</ol>
+				</main>
+			</div>
+		</section>
+		<section class="legal">
+			<p>This web-appliction made by aniket 05-07-2023</p>
+		</section>
+
+		<script src="/static/js/main.js"></script>
+	</body>
+</html>
