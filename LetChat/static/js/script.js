@@ -22,15 +22,29 @@ async function postData(url = "", data = {}) {
 }
 
 sendButton.addEventListener("click", async () => {
-	questionInput = document.getElementById("questionInput").value;
+	let userQes = document.getElementById("userQes");
+
+	let questionInput = document.getElementById("questionInput").value;
+	let questionIn = questionInput.toLowerCase();
+	userQes.innerHTML = questionInput;
 	document.getElementById("questionInput").value = "";
 	document.querySelector(".right2").style.display = "block";
 	document.querySelector(".right1").style.display = "none";
 
-	question1.innerHTML = questionInput;
-	question2.innerHTML = questionInput;
+	question1.innerHTML = questionIn;
+	question2.innerHTML = questionIn;
 
 	// Get the answer and populate it!
-	let result = await postData("/api", { question: questionInput });
+	let result = await postData("/api", { question: questionIn });
 	solution.innerText = result.answer;
+});
+
+let btnchat = document.getElementById("btnchat");
+btnchat.addEventListener("click", () => {
+	let chat2 = document.getElementById("chat2");
+	if (chat2.style.display === "none") {
+		chat2.style.display = "block";
+	} else {
+		chat2.style.display = "none";
+	}
 });

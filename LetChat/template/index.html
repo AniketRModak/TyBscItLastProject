@@ -202,6 +202,7 @@
 			}
 			/*nav end*/
 			.right2 {
+				width: auto;
 				display: none;
 				overflow: hidden;
 				background: black;
@@ -239,7 +240,7 @@
 				color: rgb(255, 255, 255);
 			}
 			#solution {
-				height: 60vh;
+				height: 100vh;
 
 				overflow-y: scroll;
 				color: rgb(255, 255, 255);
@@ -248,6 +249,19 @@
 				color: rgb(255, 255, 255);
 				text-align: center;
 				font-weight: 600;
+			}
+			.btnchat {
+				width: 11rem;
+				height: 3rem;
+				background-color: #424b56;
+				border: 0.1rem solid #fff;
+				border-radius: 0.5rem;
+				margin-left: 1rem;
+				margin-bottom: 1rem;
+			}
+			#chat2 {
+				display: none;
+				overflow-y: scroll;
 			}
 		</style>
 		<title>LetChat</title>
@@ -277,7 +291,7 @@
 			</div>
 		</nav>
 
-		<div id="left1" class="flex h-[100vh] mt-12 text-white">
+		<div id="left1" class="flex flex-row h-[100vh] mt-12 text-white">
 			<div class="left bg-[#202123] w-24">
 				<button
 					class="py-2 w m-2 px-10 space-x-2 border-white border rounded-md flex mx-4 justify-start items-center hover:opacity-70"
@@ -300,30 +314,38 @@
 					<span> <a href="/">New Chat</a> </span>
 				</button>
 				<div class="text-xs m-4 mx-8 text-gray-400">Today</div>
-				<div class="chats flex flex-col justify-center items-center space-y-2">
-					{% for chat in myChats %}
+				<div class="btn-div">
+					<button id="btnchat" class="btnchat">chats</button>
+				</div>
+				<div
+					id="chat2"
+					class="chat2 flex flex-col justify-center items-center space-y-2"
+				>
 					<div
-						class="chat space-x-2 opacity-80 w-[90%] px-5 py-2 rounded-md bg-gray-600 cursor-pointer flex justify-start items-center"
+						class="chats flex flex-col justify-center items-center space-y-2"
 					>
-						<svg
-							stroke="currentColor"
-							fill="none"
-							stroke-width="2"
-							viewBox="0 0 24 24"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="h-4 w-4"
-							height="1em"
-							width="1em"
-							xmlns="http://www.w3.org/2000/svg"
+						<div
+							class="chat space-x-4 opacity-80 w-[90%] px-5 py-2 rounded-md bg-gray-600 cursor-pointer flex justify-start items-center"
 						>
-							<path
-								d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-							></path>
-						</svg>
-						<span>{{chat.question}}</span>
+							<svg
+								stroke="currentColor"
+								fill="none"
+								stroke-width="2"
+								viewBox="0 0 24 24"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="h-4 w-4"
+								height="1em"
+								width="1em"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+								></path>
+							</svg>
+							<span id="userQes"></span>
+						</div>
 					</div>
-					{% endfor %}
 				</div>
 			</div>
 

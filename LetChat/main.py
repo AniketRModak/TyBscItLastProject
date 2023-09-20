@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify, request
 from flask_pymongo import PyMongo
 import openai
 
-openai.api_key = "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"
+openai.api_key = "sk-BOz0sKATZ7V69aWDsqRAT3BlbkFJi0Zn87dFb5hlWnORZqTXx"
 
 
 app = Flask(__name__, template_folder='template')
