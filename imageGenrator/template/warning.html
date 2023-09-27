@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Warning</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				text-decoration: none;
+				list-style: none;
+				box-sizing: border-box;
+			}
+			/* nav start*/
+			.container2 {
+				margin-left: 5%;
+				margin-right: 5%;
+			}
+
+			.nav {
+				width: 100%;
+				height: 65px;
+				z-index: 1;
+				position: absolute;
+				line-height: 65px;
+				text-align: center;
+				background-color: black;
+			}
+
+			.nav div.logo {
+				width: 180px;
+				height: 10px;
+				position: absolute;
+			}
+
+			.nav div.logo a {
+				text-decoration: none;
+				color: #fff;
+				font-weight: bold;
+				font-size: 1.8em;
+				text-transform: uppercase;
+			}
+
+			.nav div.logo a:hover {
+				color: #c0c0c0;
+			}
+
+			.nav div.main_list {
+				width: 600px;
+				height: 65px;
+				float: right;
+			}
+
+			.nav div.main_list ul {
+				width: 100%;
+				height: 65px;
+				display: flex;
+				list-style: none;
+			}
+
+			.nav div.main_list ul li {
+				width: 120px;
+				height: 65px;
+			}
+
+			.nav div.main_list ul li a {
+				text-decoration: none;
+				color: #fff;
+				line-height: 65px;
+				font-size: larger;
+				text-transform: uppercase;
+			}
+
+			.nav div.main_list ul li a:hover {
+				color: #c0c0c0;
+			}
+
+			.nav div.media_button {
+				width: 40px;
+				height: 40px;
+				background-color: transparent;
+				position: absolute;
+				right: 15px;
+				top: 12px;
+				display: none;
+			}
+
+			.nav div.media_button button.main_media_button {
+				width: 100%;
+				height: 100%;
+				background-color: transparent;
+				outline: 0;
+				border: none;
+				cursor: pointer;
+			}
+
+			.nav div.media_button button.main_media_button span {
+				width: 98%;
+				height: 1px;
+				display: block;
+				background-color: #fff;
+				margin-top: 9px;
+				margin-bottom: 10px;
+			}
+
+			.nav div.media_button button.main_media_button:hover span:nth-of-type(1) {
+				transform: rotateY(180deg);
+				transition: all 0.5s;
+				background-color: #c0c0c0;
+			}
+
+			.nav div.media_button button.main_media_button:hover span:nth-of-type(2) {
+				transform: rotateY(180deg);
+				transition: all 0.4s;
+				background-color: #c0c0c0;
+			}
+
+			.nav div.media_button button.main_media_button:hover span:nth-of-type(3) {
+				transform: rotateY(180deg);
+				transition: all 0.3s;
+				background-color: #c0c0c0;
+			}
+
+			.nav div.media_button button.active span:nth-of-type(1) {
+				transform: rotate3d(0, 0, 1, 45deg);
+				position: absolute;
+				margin: 0;
+			}
+
+			.nav div.media_button button.active span:nth-of-type(2) {
+				display: none;
+			}
+
+			.nav div.media_button button.active span:nth-of-type(3) {
+				transform: rotate3d(0, 0, 1, -45deg);
+				position: absolute;
+				margin: 0;
+			}
+
+			.nav div.media_button button.active:hover span:nth-of-type(1) {
+				transform: rotate3d(0, 0, 1, 20deg);
+			}
+
+			.nav div.media_button button.active:hover span:nth-of-type(3) {
+				transform: rotate3d(0, 0, 1, -20deg);
+			}
+
+			/* Home section */
+
+			/* Medai qurey section */
+
+			@media screen and (min-width: 768px) and (max-width: 1024px) {
+				.container2 {
+					margin: 0;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				.container2 {
+					margin: 0;
+				}
+
+				.nav div.logo {
+					margin-left: 15px;
+				}
+
+				.nav div.main_list {
+					width: 100%;
+					margin-top: 65px;
+					height: 0px;
+					overflow: hidden;
+				}
+
+				.nav div.show_list {
+					height: 200px;
+				}
+
+				.nav div.main_list ul {
+					flex-direction: column;
+					width: 100%;
+					height: 200px;
+					top: 80px;
+					right: 0;
+					left: 0;
+				}
+
+				.nav div.main_list ul li {
+					width: 100%;
+					height: 40px;
+					background-color: black;
+				}
+
+				.nav div.main_list ul li a {
+					text-align: center;
+					line-height: 40px;
+					width: 100%;
+					height: 40px;
+					display: table;
+				}
+
+				.nav div.media_button {
+					display: block;
+				}
+			}
+			/* nav end*/
+
+			.mainsec1 {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.sec1 {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 5rem 0rem 0rem 0rem;
+				width: 50vw;
+				height: 30vh;
+				background-color: #ee352a;
+			}
+			.sec1 > img {
+				width: 8rem;
+			}
+			.sec2 {
+				border: 0.1rem solid rgb(255, 255, 255);
+				width: 50vw;
+				height: 50vh;
+				padding: 2rem 0rem 0rem 2rem;
+				color: black;
+				background-color: white;
+			}
+			html {
+				background-color: black;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="nav">
+			<div class="container2">
+				<div class="logo">
+					<a href="/">LetChat</a>
+				</div>
+				<div class="main_list" id="mainListDiv">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="http://127.0.0.1:5006/">Project</a></li>
+						<li><a href="/warning">warning</a></li>
+						<li><a href="/about">About</a></li>
+					</ul>
+				</div>
+				<div class="media_button">
+					<button class="main_media_button" id="mediaButton">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+		<div class="mainsec1">
+			<div class="sec1">
+				<img src="/static/img/Danger.png" alt="Warning" />
+			</div>
+			<div class="sec2">
+				<h3>**Warning: AI Image Generator Usage Guidelines**</h3>
+				<p>
+					Our AI Image Generator is a powerful tool designed to assist users in
+					creating unique and imaginative visuals. We urge users to exercise
+					responsibility and caution when providing prompts to ensure a
+					respectful and safe environment for all. Please refrain from entering
+					inappropriate, explicit, or offensive prompts that may generate
+					offensive or harmful content. Inappropriate usage not only undermines
+					the purpose of this tool but can also lead to the suspension of your
+					account. Let's collectively foster creativity, respect, and positive
+					engagement within our community. By adhering to these guidelines, we
+					can maintain a welcoming and enjoyable experience for all users. Your
+					cooperation in using this tool responsibly is greatly appreciated.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

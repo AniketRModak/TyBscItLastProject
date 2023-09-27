@@ -55,4 +55,9 @@ def about():
     return render_template('about.html', )
 
 
+@app.route('/warning')
+def warning():
+    return render_template('warning.html', )
+
+
 app.run(host='0.0.0.0', port=5002)
