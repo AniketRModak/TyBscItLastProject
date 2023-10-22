@@ -32,40 +32,32 @@ sendButton.addEventListener("click", () => {
 		let beat = new Audio("/static/music/Scam.mp3");
 		const utterance = new SpeechSynthesisUtterance();
 		var transcript = e.results[0][0].transcript;
-		userquestion.innerHTML = transcript;
-		console.log(transcript);
+		var samllans = transcript.toLowerCase();
+		userquestion.innerHTML = samllans;
+		const noSpecialCharacters = samllans.replace(/[^a-zA-Z0-9 ]/g, "");
+		console.log(noSpecialCharacters);
 
-		if (transcript.includes("Hello.")) {
+		if (transcript.includes("hello")) {
 			const text = "Hello Boss.";
 			utterance.text = text;
-		} else if (
-			transcript.includes("Who made you?") ||
-			transcript.includes("Who creates you?")
-		) {
-			const text = "I was made by Aniket ";
-			utterance.text = text;
-		} else if (
-			transcript.includes("What's your name?") ||
-			transcript.includes("What is your name?")
-		) {
-			const text = "My name is veer";
-			utterance.text = text;
-		} else if (transcript.includes("Open YouTube.")) {
+		} else if (noSpecialCharacters.includes("open youtube")) {
 			window.open("https://YouTube.com", "_blank");
 			const text = "Opening YouTube.";
 			utterance.text = text;
-		} else if (transcript.includes("Open Google.")) {
+		} else if (noSpecialCharacters.includes("open google")) {
 			window.open("https://google.com", "_blank");
 			const text = "Opening Google.";
 			utterance.text = text;
-		} else if (transcript.includes("Play song.")) {
+		} else if (noSpecialCharacters.includes("play song")) {
 			beat.play();
-		} else if (transcript.includes("Google")) {
-			window.open(
-				`https://www.google.com/search?q=${transcript.replace(" ", "+")}`,
-				"_blank"
-			);
-			const text = "This is what i found on internet regarding " + transcript;
+		} else if (noSpecialCharacters.includes("stop song")) {
+			beat.pause();
+		} else if (noSpecialCharacters.includes("search on google")) {
+			let search = noSpecialCharacters.replace("search on google", " ");
+			console.log(search);
+			window.open(`https://www.google.com/search?q=${search}`, "_blank");
+			const text =
+				"This is what i found on internet regarding " + noSpecialCharacters;
 			utterance.text = text;
 		} else {
 			async function postData(url = "", data = {}) {
@@ -80,7 +72,7 @@ sendButton.addEventListener("click", () => {
 			}
 
 			//for api
-			let result = await postData("/api", { question: transcript });
+			let result = await postData("/api", { question: noSpecialCharacters });
 			// solution.innerHTML = result.answer;
 			let text = result.answer;
 			//for speech

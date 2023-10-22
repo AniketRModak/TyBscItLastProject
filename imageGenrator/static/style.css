@@ -10,8 +10,7 @@
 	text-decoration: none;
 	list-style: none;
 	transition: all 0.4s;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 html,
 body {
@@ -19,7 +18,12 @@ body {
 	width: 100%;
 }
 body {
-	background-color: #1d1d1d;
+	background: rgb(70, 30, 131);
+	background: radial-gradient(
+		circle,
+		rgba(70, 30, 131, 1) 0%,
+		rgba(23, 1, 64, 1) 68%
+	);
 	color: var(--t-color);
 }
 ::-webkit-scrollbar {
@@ -31,14 +35,18 @@ nav {
 	width: 100%;
 }
 #tempbg {
-	display: flex;
-	justify-content: center;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-items: center;
+	row-gap: 2rem;
 }
-#tempbg img {
-	margin-top: 3rem;
-	width: 90vw;
-	overflow-y: hidden;
+#tempbg > img {
+	width: 23vw;
+	border-radius: 0.5rem;
 }
+
 /* loadingGif start */
 
 #loadingGif {
@@ -142,6 +150,14 @@ nav {
 	justify-content: center;
 	margin-top: 3rem;
 }
+.mainProm > h1 {
+	text-align: center;
+}
+.mainProm > p {
+	font-size: 1.5rem;
+	padding: 1rem 0rem;
+	font-weight: 500;
+}
 .imageCont {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -164,7 +180,7 @@ nav {
 	/* position: fixed; */
 	line-height: 65px;
 	text-align: center;
-	background-color: var(--bg-color);
+	background-color: transparent;
 }
 
 .nav div.logo {
@@ -176,7 +192,9 @@ nav {
 
 .nav div.logo a {
 	text-decoration: none;
-	color: var(--t-color);
+	background: -webkit-linear-gradient(#ae48ff, #6335fb);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	font-weight: bold;
 	font-size: 1.8em;
 	text-transform: uppercase;
@@ -288,75 +306,12 @@ nav {
 
 /* Home section */
 
-/* Medai qurey section */
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-	.container2 {
-		margin: 0;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	.container2 {
-		margin: 0;
-	}
-	.mainProm > h1 {
-		margin-left: 2rem;
-		font-size: 1.9rem;
-	}
-	/* .imageCont {
-		grid-template-columns: repeat(2, 1fr);
-		margin-left: 0.5rem;
-	} */
-	.nav div.logo {
-		margin-left: 15px;
-	}
-
-	.nav div.main_list {
-		width: 100%;
-		margin-top: 65px;
-		height: 0px;
-		overflow: hidden;
-	}
-
-	.nav div.show_list {
-		height: 200px;
-	}
-
-	.nav div.main_list ul {
-		flex-direction: column;
-		width: 100%;
-		height: 200px;
-		top: 80px;
-		right: 0;
-		left: 0;
-	}
-
-	.nav div.main_list ul li {
-		width: 100%;
-		height: 40px;
-		background-color: var(--bg-color);
-	}
-
-	.nav div.main_list ul li a {
-		text-align: center;
-		line-height: 40px;
-		width: 100%;
-		height: 40px;
-		display: table;
-	}
-
-	.nav div.media_button {
-		display: block;
-	}
-}
-
 /* input and btn start */
 .input-group {
 	display: flex;
 	flex-direction: row;
 	margin: 0 auto;
-	margin-top: 2rem;
+
 	justify-content: center;
 	max-width: 34rem;
 }
@@ -433,3 +388,119 @@ nav {
 	-webkit-text-fill-color: transparent;
 	transition: 0.3s;
 }
+#step {
+	margin-top: 5rem;
+}
+.allstep {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+#step > h1,
+#step > h5 {
+	margin: 0.5rem 0rem 1rem 2rem;
+}
+#step > h1 > span {
+	text-decoration: none;
+	background: -webkit-linear-gradient(#ae48ff, #6335fb);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.step1,
+.step2,
+.step3 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 31vw;
+	height: 31vh;
+	flex-direction: column;
+	border: 0.1rem solid transparent;
+	border-image: linear-gradient(to right, #cd4ffd, #3f24b5);
+	border-image-slice: 1;
+	text-align: center;
+}
+.step1 > span,
+.step2 > span,
+.step3 > span {
+	margin-bottom: 1rem;
+	font-size: 2rem;
+	text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #3f24b5, 0 0 40px #cd4ffd,
+		0 0 50px #3f24b5, 0 0 60px #cd4ffd, 0 0 70px #3f24b5;
+}
+
+footer {
+	text-align: center;
+	margin-top: 5rem;
+	height: 3rem;
+}
+
+/* Medai qurey section start*/
+
+@media screen and (max-width: 768px) {
+	.nav div.logo a {
+		font-size: 1em;
+	}
+
+	.nav div.main_list {
+		width: 100%;
+		margin-top: 65px;
+		height: 0px;
+		overflow: hidden;
+	}
+
+	.nav div.show_list {
+		height: 200px;
+	}
+
+	.nav div.main_list ul {
+		flex-direction: column;
+		width: 100%;
+		height: 200px;
+		top: 80px;
+		right: 0;
+		left: 0;
+	}
+
+	.nav div.main_list ul li {
+		width: 100%;
+		height: 40px;
+		background-color: var(--bg-color);
+	}
+
+	.nav div.main_list ul li a {
+		text-align: center;
+		line-height: 40px;
+		width: 100%;
+		height: 40px;
+		display: table;
+	}
+
+	.nav div.media_button {
+		display: block;
+	}
+	.mainProm > h1 {
+		font-size: 1.5rem;
+	}
+	.mainProm > p {
+		font-size: 1rem;
+	}
+
+	.allstep {
+		flex-direction: column;
+	}
+	.step1,
+	.step2,
+	.step3 {
+		width: 90vw;
+		margin-bottom: 2rem;
+	}
+	.step1 > span,
+	.step2 > span,
+	.step3 > span {
+		font-size: 1.5rem;
+	}
+}
+
+/* Medai qurey section End */
