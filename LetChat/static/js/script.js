@@ -36,7 +36,14 @@ sendButton.addEventListener("click", async () => {
 
 	// Get the answer and populate it!
 	let result = await postData("/api", { question: questionIn });
-	solution.innerText = result.answer;
+
+	console.log(result.answer);
+	if (result.answer === undefined) {
+		solution.innerText =
+			"Thank you! I'm just a machine learning model designed to respond to questions and generate text based on my training data. Is there anything specific you'd like to ask or discuss? ";
+	} else {
+		solution.innerText = result.answer;
+	}
 });
 
 let btnchat = document.getElementById("btnchat");

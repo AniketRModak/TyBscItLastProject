@@ -32,32 +32,43 @@ sendButton.addEventListener("click", () => {
 		let beat = new Audio("/static/music/Scam.mp3");
 		const utterance = new SpeechSynthesisUtterance();
 		var transcript = e.results[0][0].transcript;
-		var samllans = transcript.toLowerCase();
-		userquestion.innerHTML = samllans;
-		const noSpecialCharacters = samllans.replace(/[^a-zA-Z0-9 ]/g, "");
-		console.log(noSpecialCharacters);
+		userquestion.innerHTML = transcript;
+		console.log(transcript);
 
-		if (transcript.includes("hello")) {
+		if (transcript.includes("Hello.")) {
 			const text = "Hello Boss.";
 			utterance.text = text;
-		} else if (noSpecialCharacters.includes("open youtube")) {
+		} else if (
+			transcript.includes("Who made you?") ||
+			transcript.includes("Who creates you?")
+		) {
+			const text = "I was made by Aniket ";
+			utterance.text = text;
+		} else if (transcript.includes("Who is Omkar?")) {
+			const text = "Omkar is gay";
+			utterance.text = text;
+		} else if (
+			transcript.includes("What's your name?") ||
+			transcript.includes("What is your name?")
+		) {
+			const text = "My name is veer";
+			utterance.text = text;
+		} else if (transcript.includes("Open YouTube.")) {
 			window.open("https://YouTube.com", "_blank");
 			const text = "Opening YouTube.";
 			utterance.text = text;
-		} else if (noSpecialCharacters.includes("open google")) {
+		} else if (transcript.includes("Open Google.")) {
 			window.open("https://google.com", "_blank");
 			const text = "Opening Google.";
 			utterance.text = text;
-		} else if (noSpecialCharacters.includes("play song")) {
+		} else if (transcript.includes("Play song.")) {
 			beat.play();
-		} else if (noSpecialCharacters.includes("stop song")) {
-			beat.pause();
-		} else if (noSpecialCharacters.includes("search on google")) {
-			let search = noSpecialCharacters.replace("search on google", " ");
-			console.log(search);
-			window.open(`https://www.google.com/search?q=${search}`, "_blank");
-			const text =
-				"This is what i found on internet regarding " + noSpecialCharacters;
+		} else if (transcript.includes("Google")) {
+			window.open(
+				`https://www.google.com/search?q=${transcript.replace(" ", "+")}`,
+				"_blank"
+			);
+			const text = "This is what i found on internet regarding " + transcript;
 			utterance.text = text;
 		} else {
 			async function postData(url = "", data = {}) {
@@ -72,9 +83,15 @@ sendButton.addEventListener("click", () => {
 			}
 
 			//for api
-			let result = await postData("/api", { question: noSpecialCharacters });
+			let result = await postData("/api", { question: transcript });
 			// solution.innerHTML = result.answer;
-			let text = result.answer;
+			console.log(result.answer);
+			if (result.answer === undefined) {
+				text = "Thank you! I'm just a machine learning model.";
+			} else {
+				text = result.answer;
+			}
+
 			//for speech
 
 			utterance.text = text;

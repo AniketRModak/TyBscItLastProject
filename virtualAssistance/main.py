@@ -1,8 +1,5 @@
 from flask import Flask, render_template, jsonify, request
 from flask_pymongo import PyMongo
-import openai
-
-openai.api_key = "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"
 
 
 app = Flask(__name__, template_folder='template')
@@ -15,6 +12,7 @@ mongo = PyMongo(app)
 def home():
     ques = mongo.db.ques.find({})
     myques = [que for que in ques]
+    print(myques)
     return render_template("index.html")
 
 
@@ -32,24 +30,10 @@ def qa():
         print(que)
         if que:
             data = {"question": question, "answer": f"{que['answer']}"}
+            print(data)
             return jsonify(data)
         else:
-            response = openai.Completion.create(
-                model="text-davinci-003",
-                prompt=question,
-                temperature=0.7,
-                max_tokens=256,
-                top_p=1,
-                frequency_penalty=0,
-                presence_penalty=0
-            )
-            print(response)
-            data = {"question": question,
-                    "answer": response["choices"][0]["text"]}
-            mongo.db.ques.insert_one(
-                {"question": question, "answer": response["choices"][0]["text"]})
-            return jsonify(data)
-    data = {"result": "Thank you! I'm just a machine learning model designed to respond to questions and generate text based on my training data. Is there anything specific you'd like to ask or discuss? "}
+            data = {"result": "Thank you! I'm just a machine learning model designed to respond to questions and generate text based on my training data. Is there anything specific you'd like to ask or discuss? "}
 
     return jsonify(data)
 
